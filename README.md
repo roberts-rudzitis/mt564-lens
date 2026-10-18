@@ -4,6 +4,16 @@ A Python tool that generates synthetic SWIFT MT564 corporate action messages for
 
 All data is fake: invented company names, randomly built ISINs with valid check digits, and placeholder BIC codes. No real client or bank data is used.
 
+## Who is this for?
+
+**Developers building banking or custody systems.** Real MT564 messages contain confidential client data and can't be shared for testing. Synthetic messages can feed test environments, check how a parser handles edge cases, or train new staff on the message structure without exposing anyone's information.
+
+**Students and trainees.** Learning SWIFT formats from documentation alone is slow. Generating a batch of messages and comparing them shows the tags, date sequence, and rate formatting in practice.
+
+**Operations and compliance teams.** The `--seed` option makes every run reproducible, so a test scenario can be recreated exactly for troubleshooting or audit.
+
+**The open-source community.** Public examples of financial messaging formats are rare because real samples are protected. This project aims to fill that gap for anyone searching for MT564 examples or SWIFT test data.
+
 ## Status
 
 Version 0.1 supports cash dividend events only (`CAEV//DVCA`, message function `NEWM`).
